@@ -11,17 +11,17 @@ function render(todo) {
   list.innerHTML = `<li><div class="card">${todo.icon} &nbsp;<strong>${todo.title}</strong> - by ${todo.author.firstName} ${todo.author.lastName}</strong> in ${todo.category}</div></li>`;
 }
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   let author = {
     first: "Sam",
-    last: "Blue"
+    last: "Blue",
   };
   let values = {
     todoTitle: title.value,
     completed: completed.checked,
     chosenCategory: category.value,
-    user: author
+    user: author.values,
   };
   let todo = createTodo(values);
   title.value = "";
