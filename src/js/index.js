@@ -8,8 +8,10 @@ let category = document.querySelector("#todo-category");
 let list = document.querySelector("#todo-list");
 
 function render(todo) {
-  list.innerHTML = `<li><div class="card">${todo.icon} &nbsp;<strong>${todo.todoTitle}</strong> - by ${todo.user.first} ${todo.user.last}</strong> in ${todo.chosenCategory}</div></li>`;
+  list.innerHTML = `<li><div class="card">${todo.icon} &nbsp;<strong>${todo.title}</strong> - by ${todo.author.firstName} ${todo.author.lastName}</strong> in ${todo.category}</div></li>`;
 }
+
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -19,9 +21,9 @@ form.addEventListener("submit", (event) => {
   };
   let gift = completed.checked ? "✅" : "⏳";
   let values = {
-    icon: gift,
     todoTitle: title.value,
     completed: completed.checked,
+    icon: gift,
     chosenCategory: category.value,
     user: author,
   };

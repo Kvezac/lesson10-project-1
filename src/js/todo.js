@@ -1,9 +1,28 @@
 /* todo.js */
-
 /**
  * @param {object} data
  */
 export function createTodo(data) {
+  const newTodo = {
+    title: data.todoTitle,
+    isCompleted: data.completed,
+    icon: data.icon,
+    category: data.chosenCategory,
+    author: {
+      firstName: data.user.first,
+      lastName: data.user.last,
+    }
+  }
+  return newTodo
+}
+
+// код ниже не имеет отношения к заданию
+
+
+/**
+ * @param {object} data
+ */
+/*export function createTodo(data) {
   const newTodo = {};
   const entries = Object.entries(data);
   while (entries.length) {
@@ -22,4 +41,5 @@ export function createTodo(data) {
     }
   }
   return newTodo;
-}
+ 
+
