@@ -40,6 +40,5 @@ export function createTodo(data) {
       newTodo[key] = value;
     }
   }
-  return newTodo;
+  return newTodo;*/
  
-
